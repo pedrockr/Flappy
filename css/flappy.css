@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Pixel";
+  src: url("../fonts/Pixel.ttf");
+}
+/*
+  - seletor de atributo[atributo].
+  - css referente a div que determina a area jogavel
+  - ⁡⁢⁢⁢overflow⁡ determina que o que sair desta div nao será
+  mostrado na tela.
+  - ⁡⁢⁢⁢position: relative⁡ permite o uso de top, down, left e right.
+*/
+[wm-flappy] {
+  position: relative;
+  border: 5px solid dodgerblue;
+  height: 700px;
+  width: 1200px;
+  margin: 15px;
+  background-color: deepskyblue;
+  overflow: hidden;
+}
+/*
+  classe referente a imagem do passaro.
+  ⁡⁢⁢⁢position: absolute⁡ posiciona o componente dentro de um componente pai.
+  ⁡⁢⁢⁢left: calc(50% - 30px)⁡⁡ esta sendo utilizado para posicionar a
+  borda direita da imagem no centro da div pai.
+*/
+.passaro {
+  position: absolute;
+  width: 60px;
+  left: calc(50% - 30px);
+  bottom: 50%;
+}
+/*
+  - classe referente a o conjunto de barreiras, superior e inferior
+  ⁡⁢⁢⁢- justify-content: space-between; alinha os itens nas bordas deixando
+  um espaço entre eles, este é por onde o passaro ira passar⁡
+*/
+.par-de-barreiras {
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.barreira {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.barreira .borda {
+  height: 30px;
+  width: 130px;
+  background: linear-gradient(90deg, #639301, #a5e82e);
+  border: 2px solid #000;
+}
+.barreira .corpo {
+  height: 130px;
+  width: 110px;
+  background: linear-gradient(90deg, #639301, #a5e82e);
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+}
+.progresso {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: Pixel;
+  font-size: 70px;
+}
